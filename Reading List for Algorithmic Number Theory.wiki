@@ -1,0 +1,68 @@
+= Good reading list to build up to algebraic number theory? =
+----
+
+== Answer ==
+
+== Introductory ===
+
+A couple good ones to get started are:
+
+* A Classical Introduction to Modern Number Theory - Ireland & Rosen
+* Primes of the form x2+ny2 - David Cox
+
+These will introduce a lot of the main ideas in a way that you can understand with only the basics of abstract algebra.
+
+Having background in Galois Theory helps (you can use Dummit & Foote for a solid intro).
+
+Cox's book is probably one of the best reads in the subject.
+
+Then there are a few that introduce the basic formalism rigorously:
+
+=== Basic Formalism ===
+
+* First two/three chapters of Algebraic Number Theory - Neukirch
+* Milne's Online Notes (PDF)
+A Course in Arithmetic - Serre (PDF)
+
+These cover the basics and can be found from many sources via amazon and google.
+
+=== Specialized Materials ===
+
+After this, you can look at some more specialized stuff, though the two main directions are:
+
+1. Analytic Number Theory and 
+2. Langlands Program
+
+=== Specialized Reference Items ===
+
+* Analytic Number Theory: Introduction to Analytic Number Theory - Apostal
+* Local Fields: Local Fields - Serre
+* Cyclotomic Fields: Introduction to Cyclotomic Fields - Washington
+* Class Field Theory: Algebraic Number Theory - Cassels & Frolich, the final chapters of Neukirch, Artin 
+* L-Functions: A Historical Approach - Snyder (PDF)
+* Elliptic Curves: Rational Points on Elliptic Curves - Silverman (undergrad level), 
+* The Arithmetic of Elliptic Curves - Silverman
+* Modular Forms: A First Course in Modular Forms - Diamond & Shurman, 
+* Introduction to Elliptic Curves and Modular Forms - Koblitz, 
+* Modular Functions and Modular Forms - Milne (PDF), 
+* Automorphic Forms and Representations - Bump
+* Langlands Program: (The theory that ties absolutely everything together) 
+* An Introduction to Langlands Program - Various, 
+* An Elementary Introduction to the Langlands Program - Gelbart (PDF)
+* Prerequisites for the Langlands Program - Knapp (PDF) 
+
+This has a basic overview of most everything encountered in algebraic number theory along with many more references.
+
+== Note from Answerer ==
+
+	"Check it out!
+	This may be looking far into the future, for someone just getting into Algebraic Number Theory, but I figure it's good to have a reference to point people to.
+	I have my own biases and preferences, if anyone else wants to add something, go for it!"
+
+----
+
+== Source ==
+[Reddit](http://www.reddit.com/r/math/comments/2igtlq/good_reading_list_to_build_up_to_algebraic_number/)
+
+== Tags ==
+:ReferenceRequest:Mathematics:NumberTheory:Books:Reddit:ReadingList:
