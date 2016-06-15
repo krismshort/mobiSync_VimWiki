@@ -72,4 +72,4 @@ Please let me know (leave a message below), if I missed any major OPDS Catalog.
 [Kolyvan](http://kolyvan.com/kybook/faq/2013/07/22/opds-catalogs.html)
 
 == Tags ==
-:OPDS:Catalogs:Feeds:Tested:Bloggers:Developers:eBooks:Books:Free:Finder:Search:
+:OPDS:Catalogs:Feeds:Tested:Bloggers:Developers:eBooks:Books:Free:Finder:Search:Reading:
