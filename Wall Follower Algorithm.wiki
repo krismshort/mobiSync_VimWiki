@@ -1,0 +1,33 @@
+= Wall Follower Algorithm =
+----
+
+The _wall follower_, the best-known rule for traversing mazes, is also known as either the _left-hand rule_ or the _right-hand rule_. 
+
+If the maze is simply connected, that is, all its walls are connected together or to the maze's outer boundary, 
+
+* then by keeping one hand in contact with one wall of the maze the solver is guaranteed not to get lost and will reach a different exit if there is one; 
+* otherwise, he or she will return to the entrance having traversed every corridor next to that connected section of walls at least once.
+
+== Topological Perspective ==
+
+Another perspective into why wall following works is topological. 
+
+* If the walls are connected, then they may be deformed into a loop or circle.
+* Then wall following reduces to walking around a circle from start to finish. 
+
+To further this idea, notice that by grouping together connected components of the maze walls, the boundaries between these are precisely the solutions, even if there is more than one solution.
+
+:Failure:Not:SimplyConnected:
+
+*If the maze is not simply connected (i.e. if the start or endpoints are in the center of the structure surrounded by passage loops, or the pathways cross over and under each other and such parts of the solution path are surrounded by passage loops), this method will not reach the goal.*
+
+*Wall-following can be done in 3D or higher-dimensional mazes if its higher-dimensional passages can be projected onto the 2D plane in a deterministic manner.*
+
+For example, if in a 3D maze "up" passages can be assumed to lead northwest, and "down" passages can be assumed to lead southeast, then standard wall following rules can apply. 
+
+However, *unlike in 2D, this requires that the current orientation be known*, to determine which direction is the first on the left or right.
+----
+== Tags ==
+:Algorithm:Connected:Maze:Solver:Graph:
+
+[Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)

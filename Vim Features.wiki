@@ -1,0 +1,40 @@
+What are the most amazing things that can be done with Vim?
+
+Author:   
+Date: Jun 1, 2013, 7:00 PM  
+Source https://www.quora.com/What-are-the-most-amazing-things-that-can-be-done-with-Vim  
+
+:set rl! Display orientation from right to left.
+Vg? ROT13 encryption of current line.
+:X Encryption of a file with a key :)
+
+Browsing old files
+:ol
+
+Deleting/Changing a paragraph, sentence, line inside brackets or braces with three keys :)
+
+Getting the shell command output into your file. You can not only execute shell commands inside Vim with ! but also this :) :r!ls
+
+Searching deleting like a boss :) :g/cool/d Delete all the lines that has the word "cool".
+:v/\d/d Delete all the lines which does not have a number.
+see: http://vim.wikia.com/wiki/Power_...
+
+Ctrl + o  Ctrl + i
+:jumps If git is a stupid content tracker, then Vim is a stupid file position tracker :D Just mind blowing :)
+:marks
+The bookmarking tool of Vim. 0-9 comes by default. '0 is the location of the cursor when you last exited Vim, '1 the last but one. If there is a large file 'marks' always come handy.
+Omnicompletion What an awesome feature :) autocompleting files, words, what not :)
+
+g- g+ Piyush already had talked about the awesome :earlier command. g-, g+ is another best feature of Vim which most other text editor/IDE does not have or is difficult to use.  See Using undo branches, now Vim does the job of a version control with :earlier, :later g- g+ commands :D
+:registers Other answers already talked on how awesome registers are. Lemme try my best to show this amazing feature which saved lot of time yesterday. I will simplify the file i worked on yesterday. It was a registration form, my friend had made the order of address City -> State -> Country. I wanted to make it reverse so that it adds some functionality. This is how it is done. Just these key strokes :)  "kdd "Kdd "Kdd "kp In the first step, I cut(dd) the line to the register k, in the next steps i appended to the register k by cutting into K. In the last step i pasted(p) from the register k.
+:norm  I will take a very simple example,  Now I need to capitalize the names and greet them :). :%norm ~IHi!
+
+:macros
+This is one of the coolest features of Vim, saves lot of time than any other command. I use LaTeX quite often, my example revolves around it.
+
+I wrote the lines inside itemize plainly without any formatting. I am going to format with proper tags.
+
+Finally, some more amazing thing in Vim which I know.
+source: Best Vim Tips
+:help 42 :Ni! :help holy-grail :help map-modes (see comment below the table about :nunmap) :help UserGettingBored :help spoon :help showmatch (read the note) :help bar
+The best thing about Vim, you never stop learning :)
