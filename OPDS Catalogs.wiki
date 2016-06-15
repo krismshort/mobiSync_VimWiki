@@ -1,0 +1,75 @@
+= List of Tested OPDS Catalogs =
+----
+
+List of tested OPDS Catalogs.
+
+Date: 22 Jul 2013
+
+== Feeds with Passed Status == 
+
+feedbooks.com/catalog.atom
+
+bookserver.archive.org/catalog/
+opds.oreilly.com/opds/
+
+www.samenrico.com/opds2/
+pragprog.com/magazines.opds
+
+m.gutenberg.org/ebooks/?format=opds
+
+manybooks.net/opds/index.php
+tuebl.ca/catalog
+
+www.epubbud.com/feeds/
+
+catalog.atom
+
+flibusta.net/opds
+
+coollib.net/opds
+
+lib.rus.ec/opds
+
+books.vnuki.org/opds.xml
+
+www.epubbooks.ru/index.xml
+
+www.zone4iphone.ru/catalog.php
+
+bookserver.revues.org
+
+www.ebooksgratuits.com/opds/
+
+www.atramenta.net/opds/catalog.atom
+
+opds.youscribe.com/Catalog/catalog.xml
+
+stanza.beam-ebooks.de
+
+tatsu-zine.com/catalogs.opds
+
+www.smashwords.com/lexcycle
+
+www.bookglutton.com/api/stanza
+
+
+== Failed Feeds ==
+
+allromanceebooks.com/epub-feed.xml
+
+www.baenebooks.com/stanza.aspx
+
+www.booksonboard.com/xml/catalog.atom
+
+mises.org/catalog/
+
+== Note by Author ==
+
+Please let me know (leave a message below), if I missed any major OPDS Catalog.
+
+== Source ==
+
+[Kolyvan](http://kolyvan.com/kybook/faq/2013/07/22/opds-catalogs.html)
+
+== Tags ==
+:OPDS:Catalogs:Feeds:Tested:Bloggers:Developers:eBooks:Books:Free:Finder:Search:
