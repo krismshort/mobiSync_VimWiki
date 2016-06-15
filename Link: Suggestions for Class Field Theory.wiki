@@ -1,0 +1,16 @@
+= Link: Suggestions for good books on class field theory - MathOverflow =
+----
+
+Wyman's article: 
+	_"What is a Reciprocity Law?"_
+	American Mathematical Monthly, 
+	Vol. 79, 
+	No. 6 
+	(Jun. - Jul)
+
+== Source ==
+
+[StackExchange](http://mathoverflow.net/questions/24719/suggestions-for-good-books-on-class-field-theory)
+
+== Tags ==
+:Link:Question:StackExchange:ClassFieldTheory:Mathematics:MathOvwrflow:
