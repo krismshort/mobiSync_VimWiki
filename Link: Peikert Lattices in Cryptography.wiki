@@ -1,0 +1,12 @@
+
+= Link: CS 8803 LIC - Lattices in Cryptography 2013 =
+----
+
+*Instructor:* Chris Peikert
+
+[CS 8803 LIC: Lattices in Cryptography 2013](http://www.cc.gatech.edu/~cpeikert/lic13/)
+
+----
+
+== Tags ==
+:Class:Lecture:Notes:Peikert:Lattices:Cryptography:Link:
