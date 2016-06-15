@@ -1,0 +1,92 @@
+= I’m a Vim convert, and so should you =
+
+*Author:* Matthew Hughes  
+*Date*: Jun 5, 2013, 7:00 PM  
+[Source](http://www.matthewhughes.co.uk/im-a-vim-convert-and-so-should-you/)
+
+It’s not especially rare for people to extol the virtues of their preferred text editor. 
+
+Programmers are especially famed for their fervent adoration of their chosen one, and will defend its honor with every iota of their being.
+
+The fierce rivalry between Vim and Emacs users feel like the type you’d only usually see at the Glasgow derby between Rangers and Celtics.
+
+Until this week, I had treated my text editor as little more than a vehicle for dumping characters into a text file, which I would then execute or compile. 
+
+I generally used Sublime Text 2 when I was working on major projects where I would need to work on multiple files or would require syntax highlighting. 
+
+For those times where I’d only have to make a small edit to a single file or I wanted to use a minimalistic editor, I’d whack open Nano.
+
+But then I started my new job. I very recently started work at a local startup where pair-programming is used a lot. 
+
+For the uninitiated, pair programming is where two people will work on one problem using one computer. 
+
+The person writing the code is called the ‘driver’ and the other person in the pair is called a navigator. 
+
+As I needed to get some familiarity with the codebase, I was the person driving for most of last week and the person who was ‘navigating’ encouraged to give Vim another go. 
+
+I did not regret it.
+
+After just a few short days, Vim has rapidly became my text editor of choice. 
+In fact, I love it so much I’ve decided to write a blog post about why you should give it a try. So, what’s Vim and why is it so awesome?
+
+Vim was created in 1991 by the Dutch computer scientist Bram Moolenaar. 
+
+It borrowed heavily from the Vi text editor, but Moolenaar thought there was room for improvement. He created his own text editor and called it Vi Improved, or Vim for short. 
+
+It goes without saying that vim is one of the most pervasive editors on the market right now, and is included on most Linux distributions and with every copy of Mac OS X. It’s also been ported to Microsoft Windows too.
+
+Fundamentally, Vim is a text editor. With that said, it differs from most text editors in a few ways. 
+
+Vim has three modes. Input mode, where you insert text into a file. 
+Normal mode, where one can perform commands that perform actions on the text on your screen. 
+
+Finally, there’s command mode, which handles a miscellany of other functions including writing to disk and temporarily changing the configuration of vim without diving into a configuration file.
+
+This is all well and good, but what’s so compelling about Vim that makes it better than most other text editors?
+
+Primarily, Vim is immensely configurable. Each installation of Vim has its own configuration file. This allows you to set up how it handles things like line numbering, tabbing and autocomplete. 
+
+For a programmer, this is huge. 
+
+These configuration files are portable, so whenever you reinstall your OS, you just have copy your ‘.vimconfig’ file over. 
+
+It also has a wealth of plugins which fundamentally extend its functionality. 
+
+Right now, I’ve been doing a lot of Coffeescript, so I’ve a plugin installed that has Coffeescript syntax highlighting and linting, as well as a few others, the most notable being Syntastic.
+
+Another way Vim excels is with its built in Turing complete scripting language. Yep. That’s right. Vim is scriptable. 
+This allows the user to create plugins and to have a huge amount of control with regards to its behavior. 
+
+It’s probably worth noting that there’s an amazing Vimscript tutorial online based upon Zed Shaw’s Learn Code The Hard Way series. 
+
+The language itself isn’t much of a departure from most scripting languages you’ve probably seen. 
+
+Syntactically, it resembles a weird hybrid of Bash and Python and if you’ve ever used these languages before, it will feel incredibly familiar.
+
+Since using Vim, I’ve landed upon the conclusion that Vim is simply ergonomically superior to pretty much every other text editor out there. 
+
+You are encouraged to avoid navigating using the arrow keys; The preferred method is using ‘hjkl’. Whilst this sounds alien to a lot of people, it’s worth noting that your right hand no longer has to move down to touch the arrow keys. 
+
+The end result is that your hands are moving around far less and both hands are centered on the alphabet keys, where they rarely move from.
+
+If you’ve ever developed in a language where whitespace and indenting matter (Coffeescript and Python, for example), you’ll know how frustrating it is to modify your code and then have to manually fix the indenting just so that it’ll work in the interpreter.
+
+Sorting out indenting in Vim is simply a matter of entering ‘normal mode’ and typing the number of lines you want to indent and then adding ‘>>’. 
+
+Deleting a line is just a matter of typing ‘dd. To go down to the bottom of your document, just type ‘G’. Vim accommodates for every single piece of formatting you’ll need to do as a programmer, and has evolved to contain a simple way of doing it.
+
+That’s the beautiful thing about Vim. 
+
+People use it and make it better. 
+
+There are few use-cases that can’t be resolved by typing just a few characters. It’s simply a matter of knowing how to use your text editor. 
+
+That takes time, but the end result is totally worth it. 
+
+You’ll be more productive and less frustrated.
+
+Nothing good ever came easy.
+
+----
+== Tags ==
+:Vim:Article:
