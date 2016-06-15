@@ -27,7 +27,11 @@ For example, if in a 3D maze "up" passages can be assumed to lead northwest, and
 
 However, *unlike in 2D, this requires that the current orientation be known*, to determine which direction is the first on the left or right.
 ----
+
 == Tags ==
 :Algorithm:Connected:Maze:Solver:Graph:
 
+----
+
+== Source Link ==
 [Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
