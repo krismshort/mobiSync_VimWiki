@@ -1,0 +1,8 @@
+= Link: Beamer Theme Gallery =
+----
+
+[Beamer theme gallery](http://deic.uab.es/~iblanes/beamer_gallery/)
+
+----
+== Tags ==
+:Link:LaTeX:Beamer:Gallery:Themes:
