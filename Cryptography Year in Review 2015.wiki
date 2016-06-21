@@ -1,0 +1,178 @@
+= What Happened With Crypto This Year? 2015 in Review =
+----
+
+Author: Joseph Bonneau  
+Date: Dec 26, 2015, 4:00 PM  
+Source https://www.eff.org/deeplinks/2015/12/technical-crypto-2015-review  
+----
+
+Under the glare of the modern surveillance state, EFF's long-held goal of encrypting the web has only grown more pressing. And crypto remains on the march, with promising developments ranging from the public beta launch of the Let's Encrypt project, to the expansion of CloudFlare's Universal SSL program, or the Facebook announcement of PGP-encrypted notifications.
+
+But there's also been misguided chatter from law enforcement and elected officials, calling to weaken that crypto with backdoors, “golden keys,” and other efforts to undermine security.
+
+Looking at the technical developments of this past year can help us understand why those calls are so fundamentally misguided. And while 2015 may not have been the banner year that 2014 was in terms of attacks (with Heartbleed and POODLE), there were still a number of interesting developments.
+
+== When Our Computers Trust Somebody That We Don't ==
+
+Two PC manufacturers were busted inserting a _“trusted root certificate”_ onto the computers they sell, undermining user security in order to inject ads into web pages.
+
+Both faced major backlash, and we hope they've learned from these disasters.
+
+First, Lenovo was found out earlier this year to be shipping its laptops installed with a piece of pre-installed junkware called _“Superfish”_ which installed a custom root certificate to enable the software to man-in-the-middle HTTPS connections to inject advertisements.
+
+In addition to being creepy and inappropriate, this approach introduced a devastating security vulnerability as it was easy for anybody to extract the root certificate's private key and then (with some mild trickery) man-in-the-middle HTTPS connections to most external sites.
+
+EFF was able to confirm that several thousand Superfish-signed certificates were seen in the wild using data from our Decentralized SSL Observatory.
+
+Despite the ensuing controversy, Dell was caught in November doing essentially the same thing.
+
+On the plus side, while Lenovo initially dragged its feet to recognize the severity of Superfish, Dell quickly issued an apology and a tool to remove the offending certificates.
+
+== Export-Grade “Security” Proves Insecure, Again ==
+
+Calls for deliberately weakened encryption seem to overlook the fact that we are less secure even today as we deal with the reverberations of the 1990s-era _“Crypto Wars,”_ and official decisions to limit the security of crypto software around the world. 
+
+The most significant practical cryptanalytic attack of 2015 took advantage of that insecurity.
+
+On May 20, a group of 14 security researchers published a paper titled _Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice_ describing an attack targeting Diffie-Hellman (DH) key exchange as used by HTTPS, SSH, VPN and other servers.
+
+This was really two distinct vulnerabilities:
+
+* The first, against 512-bit DH parameters, was demonstrated by the research team itself using consumer-grade hardware and affects many servers still in deployment in 2015 (many of which have seen been patched, but not all).
+
+This is the attack that, like last year's FREAK, relies on the continued use of _"export grade"_ ciphersuites in many TLS deployments.
+
+_“Export grade”_ ciphersuites are, of course, a relic of law enforcement limiting the export of strong encryption.
+
+* The second Logjam attack, against 1024-bit DH parameters, was estimated by the researchers to be just within the resources of a nation-state attacker to perform. 
+
+It relies on the fact that breaking discrete-log in a 1024-bit DH group requires significant pre-computation which is specific to the prime in use, but this can amortized by attacking many servers using the same prime. 
+
+By analyzing the NSA _'black budget,'_ they went one step further, showing that it is at least possible if not likely that the NSA has been performing this attack for some time.
+
+As in the past, the insecurity discovered here a pain to clean up. Major browsers have removed the insecure 512-bit export-grade suites, but the 1024-bit attack remains effective in practice.
+
+== Certificate Transparency Catches Symantec's Screw-ups ==
+
+Security certificates tell our computers who to trust, so a _“mis-issuance”_ - when somebody gets or makes a certificate they're not supposed to - is a big problem.
+
+Fortunately, 2015 was a quiet year for mis-issuance, and the big story comes from a long-awaited protection measure doing its job.
+
+In September, Google researchers discovered a certificate for google.com mistakenly issued by Symantec, apparently for _"testing"_ purposes. 
+
+Two things were interesting about this compared to past rogue certificates:
+
+* First, it was an extended validation (EV) certificate, which are supposed to have a higher standard of checking before issuance. 
+
+* Second, it was perhaps the first major rogue certificate detected by Certificate Transparency logs.
+
+This is exactly what CT was designed to achieve and this was a nice validation of years of work to get CT deployed.
+
+Further testing revealed that Symantec mis-issued at least 164 certificates for _"testing"_, indicating long-running operational problems. 
+
+Symantec was hit with an unusual penalty by Google: as of June 2016 all Symantec certificates will have to be included in CT logs to be accepted by Chrome.
+
+While the plan has always been for Chrome to eventually require all certificates to be included in a CT log, imposing this on Symantec early is effectively a probationary status.
+
+In December, one of Symantec's root certificates was also removed from Chrome.
+
+== Backdoor Backfires, in Exploit Built on NSA's Shaky Foundation ==
+
+In late-breaking news, one of the backdoors discovered in Juniper's code base this month might be the first non-NSA exploit of the infamous Dual_EC random number generator.
+
+One of the most pernicious NSA actions revealed by the Snowden leaks was the backdoor inserted into the Dual_EC standard.
+
+Unpredictable, random numbers are critical in cryptography for many purposes, including generating secret keys.
+
+By picking two constant numbers (P and Q) in the standard Dual_EC algorithm to have a special relationship (a known discrete logarithm e), NSA gained the ability to learn the value of secret keys and other random values generated using the Dual_EC algorithm.
+
+Because the secret value e is needed to exploit it, this appeared to be a _"nobody but us"_ backdoor.
+
+Interestingly, Juniper (as well as several other companies) recognized the risk of using the NSA-recommended P and Q and used a different Q value in its devices.
+
+This would still be concerning, as it's not clear if this gives Juniper (or somebody else) the same backdoor that NSA wanted.
+
+However, the backdoor discovered by Juniper last week appears to work by changing Q yet again through an _"unauthorized code change"_ to Juniper's source code.
+
+Essentially, Juniper tried changing they key to NSA's backdoor (possibly throwing their own key away) and then somebody apparently sneakily changed the key yet again.
+
+It appears that, despite Juniper's purported efforts to hedge against the use of Dual_EC with a second random number generator, this is an exploitable backdoor due to bugs in the software (intentional or unintentional).
+
+We don't know who did this or how they inserted the unauthorized code.
+
+It could have been NSA itself reclaiming its original backdoor, a foreign intelligence agency, or possibly a criminal organization. 
+
+Whoever did it had the ability to decrypt all traffic from many Juniper middleboxes for a period of several years.
+
+Once again, the misguided belief that cryptography can be compromised for _"nobody but us"_ appears to have backfired spectacularly.
+
+Oh, and a much simpler master SSH password vulnerability was also inserted into Juniper's codebase for good measure.
+
+
+== Out With the Old, In With the New: The Continual Process of Upgrading HTTPS ==
+
+It's always important in cryptography to upgrade best practices as new attacks are discovered.
+
+Ideally of course, by the time algorithms are broken they've already been phased out of use. 
+
+The web has often been very slow in removing support for outdated algorithms. 2015 was encouraging in that several important changes were made to upgrade the security of crypto on the web:
+
+Although it happened several years after the other major browsers, Microsoft Internet Explorer 11 finally added support for HSTS, an important standard to allow Internet domains (such as eff.org) to ban downgrades to insecure plain HTTP.
+
+All major current browsers now support HSTS.
+
+Chrome and Firefox both rolled out support for public-key pinning (HPKP), enabling domains to specify an allowable whitelist of keys or certificate authorities to block rogue certificates.
+
+== The long funeral procession for the RC4 cipher has finally reached the cemetery ==
+
+We've known RC4 was vulnerable for over a decade and there have been an explosion of practical attacks over the past few years, prompting IETF to officially declare RC4 banned for continued use.
+
+In September, Microsoft, Mozilla and Google simultaneously announced RC4 will be completely disabled by early next year.
+
+== The long-running phaseout of the hash function SHA-1 continues ==
+
+As of January 1, 2016, new certificates issued using SHA-1 will no longer be trusted. While a full collision in SHA-1 is yet to be found which would represent a serious break of the algorithm in practice, about the next-closest attack was announced in October of this year (a free-start collision).
+
+== The Shape of Crypto To Come & NSA's Troubled Leadership Role ==
+
+We might look back on 2015 as the last year that non-quantum-safe cryptography was considered acceptable. 
+
+This comes from an official NSA announcement this August—not the leaked documents we've grown used to.
+
+The announcement states that NSA will update its list of recommend cryptographic algorithms to include only algorithms which are resistant to cryptanalysis by quantum computers.
+
+In the long run, most cryptographers believe moving to quantum-safe algorithms is necessary.
+
+Quantum computers may never exist, but cryptography is about defending against the strongest conceivable adversary.
+
+So on the surface, early government support for this inevitable upgrade should be a positive development that cryptographers can rally behind. 
+
+Unfortunately, this NSA announcement was also met with considerable skepticism and fear.
+
+There has been a steady erosion of trust in the NSA's information assurance mission due to incidents like its tampering with the Dual_EC standard.
+
+As a result, many in the cryptography community aren't sure what the real NSA motives are (and the announcement didn't offer any explanation).
+
+* Is NSA simply being cautious? 
+* Have they actually developed a working quantum computer (which would be the world's first)? 
+* Are they trying to replace secure algorithms with _"quantum-safe"_ algorithms that are actually back-doored?
+* Or are there other motives involved?
+
+Neal Koblitz and Alfred Menezes, two experienced and well-respected cryptographers, outlined many possible interpretations of this announcement.
+
+In any case, this is major news because US government agencies will be obligated to upgrade to whichever algorithms the NSA decides are quantum-safe and hence the entire computer industry will have to support them.
+
+Today, the Suite B list of recommend algorithms (AES, SHA-256, ECDSA and so on) are still a de facto standard and are by and large considered secure.
+
+But in the long run, the announcement should have us asking the question: *who should be in charge of setting cryptography standards?*
+
+Can the US government still lead this process in an open and transparent way which the community believes is about ensuring security rather than planting another round of dangerous backdoors that the next generation of cryptographers will have to deal with?
+
+----
+== Note ==
+
+This article is part of our Year In Review series; read other articles about the fight for digital rights in 2015. Like what you're reading? EFF is a member-supported nonprofit, powered by donations from individuals around the world. Join us today and defend free speech, privacy, and innovation.
+
+----
+== Tags ==
+:YearReview:Cryptography:2015:
